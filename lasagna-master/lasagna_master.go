@@ -9,8 +9,8 @@ func PreparationTime(layers []string, averageTime int) int {
 }
 
 func Quantities(layers []string) (noodles int, sauce float64) {
-	for _, v := range layers {
-		switch v {
+	for _, ingredient := range layers {
+		switch ingredient {
 		case "noodles":
 			noodles += 50
 		case "sauce":
@@ -30,8 +30,8 @@ func AddSecretIngredient(friendIngredients, myIngredients []string) []string {
 func ScaleRecipe(quantities []float64, portions int) []float64 {
 	quantityMultiplier := float64(portions) / 2
 	scaledQuantities := make([]float64, len(quantities))
-	for i, v := range quantities {
-		scaledQuantities[i] = v * quantityMultiplier
+	for i, quantity := range quantities {
+		scaledQuantities[i] = quantity * quantityMultiplier
 	}
 
 	return scaledQuantities
